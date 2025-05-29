@@ -1,1 +1,1 @@
-# template plugin
+# openfga.nvim
