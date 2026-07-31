@@ -17,9 +17,17 @@ With [lazy.nvim](https://github.com/folke/lazy.nvim):
 ```
 
 The plugin supports `.fga` and `.openfga` files. The OpenFGA language server
-must be available separately; the plugin automatically detects the server
-bundled with the OpenFGA VS Code extension when it is installed under
-`~/.vscode-server/extensions` or `~/.vscode/extensions`.
+must be available separately. The plugin first looks for the standalone
+[`openfga-lsp`](https://github.com/goropikari/openfga-lsp) executable, then
+other known server executable names, and finally the server bundled with the
+OpenFGA VS Code extension under `~/.vscode-server/extensions` or
+`~/.vscode/extensions`.
+
+To install the standalone server:
+
+```bash
+go install github.com/goropikari/openfga-lsp/cmd/openfga-lsp@latest
+```
 
 Install the [OpenFGA VS Code extension](https://marketplace.visualstudio.com/items?itemName=openfga.openfga-vscode)
 from the VS Code Extensions view, or install it from the command line:
@@ -37,7 +45,8 @@ ls ~/.vscode-server/extensions/openfga.openfga-vscode-*/server/out/server.node.j
 ## LSP
 
 The plugin uses Neovim 0.12's built-in LSP configuration and starts the server
-when an OpenFGA file is opened. It looks for `openfga-language-server`,
+when an OpenFGA file is opened. It looks for `openfga-lsp`,
+`openfga-language-server`,
 `fga-language-server`, or the server bundled with the OpenFGA VS Code
 extension. You can also provide the command explicitly:
 

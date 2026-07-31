@@ -49,7 +49,7 @@ local function resolve_cmd()
     return vim.split(configured, '%s+', { trimempty = true })
   end
 
-  for _, executable in ipairs({ 'openfga-language-server', 'fga-language-server' }) do
+  for _, executable in ipairs({ 'openfga-lsp', 'openfga-language-server', 'fga-language-server' }) do
     if vim.fn.executable(executable) == 1 then
       return { executable }
     end
