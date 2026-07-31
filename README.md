@@ -4,6 +4,23 @@ Neovim support for OpenFGA model files (`.fga` and `.openfga`). Syntax
 highlighting is included, and the plugin can start an OpenFGA language server
 for diagnostics and other LSP features.
 
+## Installation
+
+With [lazy.nvim](https://github.com/folke/lazy.nvim):
+
+```lua
+{
+  'goropikari/openfga.nvim',
+  ft = { 'openfga' },
+  opts = {},
+}
+```
+
+The plugin supports `.fga` and `.openfga` files. The OpenFGA language server
+must be available separately; the plugin automatically detects the server
+bundled with the OpenFGA VS Code extension when it is installed under
+`~/.vscode-server/extensions` or `~/.vscode/extensions`.
+
 ## LSP
 
 The plugin uses Neovim 0.12's built-in LSP configuration and starts the server
