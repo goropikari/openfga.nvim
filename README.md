@@ -1,1 +1,33 @@
 # openfga.nvim
+
+Neovim support for OpenFGA model files (`.fga` and `.openfga`). Syntax
+highlighting is included, and the plugin can start an OpenFGA language server
+for diagnostics and other LSP features.
+
+## LSP
+
+The plugin uses Neovim 0.12's built-in LSP configuration and starts the server
+when an OpenFGA file is opened. It looks for `openfga-language-server`,
+`fga-language-server`, or the server bundled with the OpenFGA VS Code
+extension. You can also provide the command explicitly:
+
+```lua
+require('openfga').setup {
+  cmd = { 'node', '/path/to/vscode-ext/server/out/server.node.js', '--stdio' },
+}
+```
+
+Alternatively, set `OPENFGA_LANGUAGE_SERVER` to a whitespace-separated command
+before starting Neovim. A custom command is useful when the language server is
+installed through a package manager or when using a development checkout.
+
+The default workspace root is the nearest directory containing `.git`. Override
+it with any Neovim 0.12 LSP option, such as `root_dir`, `settings`, or
+`on_attach`, when your workspace requires it.
+
+## License
+
+This project is licensed under the Apache-2.0 license. See [LICENSE](LICENSE)
+for more information. The OpenFGA syntax highlighting is adapted from the
+[OpenFGA VS Code extension](https://github.com/openfga/vscode-ext); see
+[NOTICE](NOTICE) for attribution.

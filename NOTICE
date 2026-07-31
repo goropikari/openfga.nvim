@@ -1,0 +1,7 @@
+openfga.nvim includes syntax highlighting adapted from the OpenFGA VS Code
+extension (https://github.com/openfga/vscode-ext).
+
+Copyright OpenFGA Authors.
+
+The adapted syntax highlighting is distributed under the Apache License,
+Version 2.0. See LICENSE for the full license text.
