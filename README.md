@@ -21,6 +21,19 @@ must be available separately; the plugin automatically detects the server
 bundled with the OpenFGA VS Code extension when it is installed under
 `~/.vscode-server/extensions` or `~/.vscode/extensions`.
 
+Install the [OpenFGA VS Code extension](https://marketplace.visualstudio.com/items?itemName=openfga.openfga-vscode)
+from the VS Code Extensions view, or install it from the command line:
+
+```bash
+code --install-extension openfga.openfga-vscode
+```
+
+After installation, verify that the language server bundle exists:
+
+```bash
+ls ~/.vscode-server/extensions/openfga.openfga-vscode-*/server/out/server.node.js
+```
+
 ## LSP
 
 The plugin uses Neovim 0.12's built-in LSP configuration and starts the server
